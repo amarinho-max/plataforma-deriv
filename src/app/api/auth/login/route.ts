@@ -39,8 +39,10 @@ export async function GET() {
     const state = generateState();
 
     const params = new URLSearchParams({
-      app_id: CLIENT_ID,
+      client_id: CLIENT_ID,
       redirect_uri: REDIRECT_URI,
+      response_type: 'code',
+      scope: 'trade account_manage',
       state,
       code_challenge: codeChallenge,
       code_challenge_method: 'S256',
