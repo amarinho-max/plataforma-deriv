@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const DERIV_TOKEN_URL = 'https://auth.deriv.com/oauth2/token';
 const CLIENT_ID = process.env.DERIV_CLIENT_ID || '';
-const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'http://localhost:3001/callback';
+const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'https://plataforma-deriv.vercel.app/callback';
 
 export async function POST(request: NextRequest) {
   try {

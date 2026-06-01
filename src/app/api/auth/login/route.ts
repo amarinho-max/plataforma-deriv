@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
-const DERIV_AUTH_URL = 'https://auth.deriv.com/oauth2/authorize';
+const DERIV_AUTH_URL = 'https://auth.deriv.com/oauth2/auth';
 const CLIENT_ID = process.env.DERIV_CLIENT_ID || '';
-const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'http://localhost:3001/callback';
+const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'https://plataforma-deriv.vercel.app/callback';
 
 function generateCodeVerifier(length: number = 64): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
@@ -65,7 +65,7 @@ export async function GET() {
       path: '/',
     });
 
-    return NextResponse.json({ url });
+    return NextResponse.json({ url, codeVerifier, state });
   } catch (error) {
     console.error('Error generating login URL:', error);
     return NextResponse.json(

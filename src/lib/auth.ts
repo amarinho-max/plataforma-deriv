@@ -3,7 +3,7 @@ import { generateCodeVerifier, generateCodeChallenge, generateState } from './ut
 const DERIV_AUTH_URL = process.env.NEXT_PUBLIC_DERIV_AUTH_URL || 'https://auth.deriv.com/oauth2/auth';
 const DERIV_TOKEN_URL = process.env.NEXT_PUBLIC_DERIV_TOKEN_URL || 'https://auth.deriv.com/oauth2/token';
 const CLIENT_ID = process.env.DERIV_CLIENT_ID || '';
-const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'http://localhost:3000/callback';
+const REDIRECT_URI = process.env.DERIV_REDIRECT_URI || 'https://plataforma-deriv.vercel.app/callback';
 
 export interface AuthTokens {
   accessToken: string;
