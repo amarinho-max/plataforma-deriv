@@ -23,7 +23,7 @@ export async function initiateLogin(): Promise<void> {
     response_type: 'code',
     client_id: CLIENT_ID,
     redirect_uri: REDIRECT_URI,
-    scope: 'trade account_manage',
+    scope: 'trade',
     state,
     code_challenge: codeChallenge,
     code_challenge_method: 'S256',
